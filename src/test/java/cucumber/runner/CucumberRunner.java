@@ -10,7 +10,6 @@ import org.junit.runner.RunWith;
         features = {"src/test/resources/featureFiles"},
         glue = {"cucumber/stepdef"},
         plugin = {"pretty", "json:target/cucumber-report.json"}
-       // ,tags = "@api"
 )
 public class CucumberRunner {
 

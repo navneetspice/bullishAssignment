@@ -43,7 +43,7 @@ public class StudentStepDef {
         testData.put("id",Integer.parseInt(id));
         testData.put("firstName",firstName);
         testData.put("lastName",lastName);
-        testData.put("studentClass",studentClass);
+        testData.put("class",studentClass);
         testData.put("nationality",nationality);
         restUtil.postRequest(testData);
     }
@@ -59,7 +59,5 @@ public class StudentStepDef {
     public void validateResponseCode(){
         Assert.assertTrue("response code for api is 200 OK",restUtil.responseCode==200);
     }
-
-
 
 }

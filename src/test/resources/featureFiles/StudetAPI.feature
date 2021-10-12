@@ -13,10 +13,10 @@ Feature: Test API
       | 102  | Charlie   |
 
   Scenario Outline: Test the post API
-    Given I Launch the post API "<id>" "<firstName>" "<lastName>" "<studentClass>" "<nationality>"
+    Given I Launch the post API "<id>" "<firstName>" "<lastName>" "<class>" "<nationality>"
     When Response code is 200 OK
     Examples:
-      | id   | firstName    | lastName| studentClass | nationality |
+      | id   | firstName    | lastName| class | nationality |
       | 121 | Navneet1      | Sh1     | 1 C          | Singapore   |
       | 122 | Navneet2      | Sh2     | 1 C          | Singapore   |
       | 123 | Navneet3      | Sh3     | 1 C          | Singapore   |

@@ -30,33 +30,29 @@ public class StudentsRepository {
     }
 
     public void deleteStudent(int id){
-        String deleteQuery = "delete from Students where id = '"+id+"'";
+        String deleteQuery = "delete from students where id = '"+id+"'";
         int result = jdbcTemplate.update(deleteQuery);
     }
 
     public Student updateStudent(Student student) {
-        String _updateQuery = "update Students set";
+        String _updateQuery = "update students set";
         String _valueQuery = " values(?";
         if(null != student.getFirstName()) {
             _updateQuery = _updateQuery.concat(" FIRSTNAME='").concat(student.getFirstName()).concat("',");
-           // _valueQuery = _valueQuery.concat(",").concat(student.getFirstName());
         }
         if(null != student.getLastName()) {
             _updateQuery = _updateQuery.concat(" LASTNAME='").concat(student.getLastName()).concat("',");
-           // _valueQuery = _valueQuery.concat(",").concat(student.getLastName());
         }
         if(null != student.getClassName()) {
             _updateQuery = _updateQuery.concat(" CLASSNAME='").concat(student.getClassName()).concat("',");
-           // _valueQuery = _valueQuery.concat(",").concat(student.getClassName());
         }
         if(null != student.getNationality()) {
             _updateQuery = _updateQuery.concat(" NATIONALITY='").concat(student.getNationality()).concat("',");
-         //   _valueQuery = _valueQuery.concat(",").concat(student.getNationality());
         }
         _updateQuery=_updateQuery.substring(0, _updateQuery.length() - 1);
         _updateQuery=_updateQuery.concat(" WHERE id=").concat(Integer.toString(student.getId()));
 
-        System.out.println("this is updateQUery".concat(_updateQuery));
+        System.out.println("update query: ".concat(_updateQuery));
         int result = jdbcTemplate.update(_updateQuery);
         return student;
     }
@@ -81,7 +77,7 @@ public class StudentsRepository {
             _query=_query.concat(" AND FIRSTNAME='").concat(dataQuery.get("firstName")).concat("'");
         }
         if(dataQuery.containsKey("lastName")) {
-            _query=_query.concat(" AND LASTNAME='").concat(dataQuery.get("firstNlastNameame")).concat("'");
+            _query=_query.concat(" AND LASTNAME='").concat(dataQuery.get("lastName")).concat("'");
         }
         if(dataQuery.containsKey("class")) {
             _query=_query.concat(" AND CLASSNAME='").concat(dataQuery.get("class")).concat("'");
