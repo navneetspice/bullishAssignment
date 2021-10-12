@@ -1,0 +1,4 @@
+1.Start a new project from start.spring.io
+2.CHoose rest repositories and rest service dependency and select 2.5.5 spring boot version with maven and jar option.
+3.Provide project group,artifact,name,package name and download the jar
+4.Import jar in intellij and start dev.
