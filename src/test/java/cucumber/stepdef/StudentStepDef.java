@@ -1,17 +1,12 @@
 package cucumber.stepdef;
 
-import io.cucumber.datatable.DataTable;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.*;
+import io.cucumber.java.en.*;
 import org.junit.Assert;
-
 import java.util.HashMap;
 import java.util.Map;
 
-public class StudentStepDef {
+public class StudentStepDef{
     private RestUtil restUtil;
 
     @Before

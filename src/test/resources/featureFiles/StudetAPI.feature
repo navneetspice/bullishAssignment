@@ -3,7 +3,6 @@ Feature: Test API
     Given I Launch the get API
     When Response code is 200 OK
 
-
   Scenario Outline: Test the put API
     Given I Launch the put API "<id>" "<firstName>"
     When Response code is 200 OK

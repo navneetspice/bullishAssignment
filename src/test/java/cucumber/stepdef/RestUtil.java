@@ -39,7 +39,6 @@ public class RestUtil {
             e.printStackTrace();
         }
     }
-
     public void postRequest(Map<Object,Object> testData) {
         try {
             URL url = new URL(appURL);
@@ -120,6 +119,36 @@ public class RestUtil {
                     (conn.getInputStream())));
             String output;
             System.out.println("PUT request output :\n");
+            while ((output = br.readLine()) != null) {
+                System.out.println(output);
+            }
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void getRequest(Map<Object,Object> testData) {
+        try {
+            URL url = new URL(appURL);
+            conn = (HttpURLConnection) url.openConnection();
+            conn.setDoOutput(true);
+            conn.setRequestMethod("GET");
+            conn.setRequestProperty("Content-Type", "application/json");
+            String input = StudentJson.getTestData(testData);
+            OutputStream os = conn.getOutputStream();
+            os.write(input.getBytes());
+            os.flush();
+            responseCode=conn.getResponseCode();
+            if (conn.getResponseCode() != 200) {
+                throw new RuntimeException("Failed : HTTP error code : "
+                        + conn.getResponseCode());
+            }
+            BufferedReader br = new BufferedReader(new InputStreamReader(
+                    (conn.getInputStream())));
+            String output;
+            System.out.println("GET request output :\n");
             while ((output = br.readLine()) != null) {
                 System.out.println(output);
             }

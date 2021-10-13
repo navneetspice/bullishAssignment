@@ -30,9 +30,9 @@ public class StudController {
         return studentDao.updateStudent(student);
     }
 
-    @DeleteMapping(value = "/student")
-    public void deleteStudent(@RequestParam(value="id") int id) {
-            studentDao.deleteStudent(id);
+    @DeleteMapping("/student")
+    public void deleteStudent(@RequestBody Student student) {
+        studentDao.deleteStudent(student.getId());
     }
 
 }
