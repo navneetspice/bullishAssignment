@@ -1,6 +1,0 @@
-com\bullish\student\repository\StudentsRepository.class
-com\bullish\student\dao\StudDaoInterface.class
-com\bullish\student\StudentsApplication.class
-com\bullish\student\studentAttributes\Student.class
-com\bullish\student\dao\impl\StudDao.class
-com\bullish\student\controller\StudController.class
