@@ -2,4 +2,4 @@
 # Prerequisite is to have the maven install and configured properly on the local machine
 # build the maven project in choice of your IDE
 # to run the service and execute the tests execute below maven command
-# mvn spring-boot:start test spring-boot:stop
+# mvn clean compile spring-boot:start test spring-boot:stop
