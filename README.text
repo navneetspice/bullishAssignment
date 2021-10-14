@@ -3,3 +3,9 @@
 # build the maven project in choice of your IDE
 # to run the service and execute the tests execute below maven command
 # mvn clean compile spring-boot:start test spring-boot:stop
+
+
+# alternatelivy, can just build and run the tests using cmd provided the maven is installed and configured
+# Open CMD
+# navigate to the project folder where the POM file is placed
+# execute mvn clean compile spring-boot:start test spring-boot:stop
